@@ -1,0 +1,68 @@
+<div class="modal-dialog" role="document" style="width: 50%;">
+    <div class="modal-content">
+        <?php echo Form::open(['url' => action('\Modules\MPCS\Http\Controllers\Form9CSettingsController@store'), 'method' => 'post', 'id' => 'add_9c_form_settings' ]); ?>
+
+
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title"><?php echo app('translator')->get( 'mpcs::lang.add_form_9_c_settings' ); ?></h4>
+        </div>
+
+        <div class="modal-body">
+            <div class="col-md-12"><br />
+
+                <!-- Date and Time -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label><?php echo app('translator')->get('mpcs::lang.date_and_time'); ?></label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="datepicker" name="datepicker" data-date-format="yyyy/mm/dd">
+                            <div class="input-group-addon">
+                                <i class="fa fa-calendar-o"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Form Starting Number -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label><?php echo app('translator')->get('mpcs::lang.form_starting_number'); ?> <span class="required" aria-required="true">*</span></label>
+                        <input type="text" name="form_starting_number" class="form-control" required>
+                    </div>
+                </div>
+
+                <!-- Ref Previous Form Number -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label><?php echo app('translator')->get('mpcs::lang.previous_note'); ?> <span class="required" aria-required="true">*</span></label>
+                        <input type="text" name="ref_previous_form_number" class="form-control" required>
+                    </div>
+                </div>
+              
+
+                <!-- Previous Day Cash -->
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label><?php echo app('translator')->get('mpcs::lang.user_added'); ?></label>
+                        <input type="text" disabled id="user_added" name="user_added" class="form-control"value="<?php echo e(auth()->user()->username, false); ?>"  required>
+                    </div>
+                </div>
+               
+
+            </div>
+        </div>
+
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-primary"><?php echo app('translator')->get( 'messages.save' ); ?></button>
+            <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo app('translator')->get( 'messages.close' ); ?></button>
+        </div>
+        <?php echo Form::close(); ?>
+
+    </div><!-- /.modal-content -->
+</div><!-- /.modal-dialog -->
+
+<script>
+    $('#datepicker').datepicker('setDate', new Date());
+</script>
+<?php /**PATH /home/vimi31/public_html/Modules/MPCS/Providers/../Resources/views/forms/partials/create_9c_form_settings.blade.php ENDPATH**/ ?>
