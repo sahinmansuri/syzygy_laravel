@@ -1,0 +1,35 @@
+Errors Encountered:
+
+
+Error 2:
+HTTP 500 Internal Server Error: Tenant could not be identified on domain 127.0.0.1
+Stancl\Tenancy\Exceptions\
+
+Fix:
+ The following were listed in the central_domains array in config/tenancy.php:
+    'localhost', // Added this
+    '127.0.0.1', // Added this
+
+Remark:
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+Error 1:
+ composer install: The `url` supplied for the path (./vendor/sarfraznawaz2005/backupmanager) repository does not exist 
+
+Fix:
+mkdir -p vendor/sarfraznawaz2005
+git clone https://github.com/sarfraznawaz2005/backupmanager.git vendor/sarfraznawaz2005/backupmanager
+
+
+Remark:
+I manually cloned the Package since i assumed it to be in the vendor/ directory as a local development package,
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+

@@ -1,0 +1,5 @@
+ALTER TABLE `expense_categories` ADD `is_employee` TINYINT(1) NOT NULL AFTER 
+`payee_id`, ADD `employee_id` INT(10) UNSIGNED NULL DEFAULT NULL AFTER 
+`is_employee`;
+ALTER TABLE `vimi31_cool`.`expense_categories` ADD INDEX
+ `employee_id` (`employee_id`);
